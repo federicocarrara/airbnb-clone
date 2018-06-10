@@ -1,0 +1,28 @@
+body {
+  margin-left: 0;
+}
+.app {
+  display: flex;
+}
+.flats-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 60%;
+  margin-left: 0;
+}
+.map {
+  flex: 1;
+  margin-left: 10px;
+  top: 0;
+  height: 100vh;
+  position: sticky;
+}
+
+@media(max-width: 800px) {
+  .map{
+    display: none;
+  }
+  .flats-list {
+    flex: 1;
+  }
+}

@@ -1,0 +1,17 @@
+.flat {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.flat:hover {
+  opacity: 0.8;
+}
+.flat-title {
+  font-weight: bold;
+  text-align: center;
+}
+.flat-picture img {
+  width: 100%;
+}
