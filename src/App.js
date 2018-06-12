@@ -4,9 +4,6 @@ import './App.css';
 import GoogleMapReact from 'google-map-react';
 import Marker from './components/marker';
 
-
-
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -43,12 +40,17 @@ class App extends Component {
     }
     return (
       <div className='app'>
-        <div className='flats-list'>
-          {this.state.flats.map(flat => <Flat
-            key={flat.name}
-            flat={flat}
-            selectFlat={this.selectFlat}/>
-          )}
+        <div className='main'>
+          <div className="input">
+            <input placeholder="Search"></input>
+          </div>
+          <div className='flats-list'>
+            {this.state.flats.map(flat => <Flat
+              key={flat.name}
+              flat={flat}
+              selectFlat={this.selectFlat}/>
+            )}
+          </div>
         </div>
         <div className="map">
           <GoogleMapReact
@@ -58,8 +60,9 @@ class App extends Component {
             key={flat.name}
             lat={flat.lat}
             lng={flat.lng}
-            price={flat.price}/>)}
-        </GoogleMapReact>
+            price={flat.price}
+            selected={flat === this.state.selectedFlat}/>)}
+          </GoogleMapReact>
         </div>
       </div>
     );

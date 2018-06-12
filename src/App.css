@@ -4,11 +4,27 @@ body {
 .app {
   display: flex;
 }
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 60%;
+  margin-left: 0;
+}
+.input{
+  margin-left: 10px;
+  height: 30px;
+  margin-bottom: 15px;
+}
+.input input {
+  height: 100%;
+  width: calc(100% - 13px);
+  padding-left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
 .flats-list {
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 60%;
-  margin-left: 0;
 }
 .map {
   flex: 1;
@@ -22,7 +38,7 @@ body {
   .map{
     display: none;
   }
-  .flats-list {
+  .main {
     flex: 1;
   }
 }
