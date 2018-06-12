@@ -8,7 +8,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      flats: []
+      flats: [],
+      allFlats: [],
+      search: ''
     }
   }
   componentDidMount() {
@@ -17,6 +19,9 @@ class App extends Component {
     .then(data => {
       this.setState({
         flats: data,
+        // add allFlatts just because considering we are working with a boilerplate and not an API
+        // when we filter we are renaming the this.flat with only the filtered flats
+        allFlats: data,
         selectedFlat: null
       })
     })
@@ -26,7 +31,14 @@ class App extends Component {
       selectedFlat: flat
     })
   }
-
+  handleSearch = (e) => {
+    this.setState({
+      search: e.target.value,
+      flats: this.state.allFlats.filter(flat => {
+        return flat.name.toLowerCase().includes(e.target.value.toLowerCase());
+      })
+    })
+  }
   render() {
     let center = {
       lat: 48.85,
@@ -42,7 +54,10 @@ class App extends Component {
       <div className='app'>
         <div className='main'>
           <div className="input">
-            <input placeholder="Search"></input>
+            <input
+            placeholder="Search"
+            value={this.state.search}
+            onChange={this.handleSearch}></input>
           </div>
           <div className='flats-list'>
             {this.state.flats.map(flat => <Flat
