@@ -2,13 +2,11 @@
 [live version](https://react-airbnb-clone.herokuapp.com/)
 Hosted on Heroku
 # Technologies
-- HTML
-- CSS (flexbox)
 - React
+- CSS (flexbox)
+- HTML 
 
-
-
-
+## About React
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
