@@ -1,4 +1,4 @@
-# react-airbnb-clone
+# airbnb-clone
 [live version](https://react-airbnb-clone.herokuapp.com/)
 Hosted on Heroku
 # Technologies
